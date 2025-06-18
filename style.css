@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+}
+
+/* SIDEBAR PRINCIPAL */
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 110px;
+  height: 100vh;
+  padding: 0 1.7rem;
+  color: #fff;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  background: #395886;
+  font-weight: bold;
+}
+
+.sidebar:hover {
+  width: 270px;
+}
+
+/* LOGO */
+.logo {
+  height: 80px;
+  padding: 16px;
+}
+
+/* MENÚ PRINCIPAL */
+.menu {
+  height: 88%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.menu li {
+  padding: 1rem;
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  position: relative;
+}
+.menu li.active,
+.menu li:hover {
+  background-color: #e0e0e058;
+}
+.menu a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.menu a span {
+  overflow: hidden;
+}
+
+.menu a i {
+  font-size: 1.2rem;
+}
+
+/* SUBMENÚ */
+.sidebar .modulos-menu {
+  position: relative; /* necesario para que submenu absoluto se posicione respecto a este */
+}
+.sidebar .submenu {
+  max-height: 0;
+  overflow: hidden;
+  background-color: transparent;
+  list-style: none;
+  padding-left: 2.6rem;
+  transition: max-height 0.4s ease;
+  border-radius: 6px;
+}
+
+.sidebar .submenu li a {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem; /* Por si le agregas íconos luego */
+  color: #ecf0f1;
+  padding: 0.5rem 0;
+  font-size: 14.5px; /* Tono intermedio, buen equilibrio */
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.sidebar .submenu li a:hover {
+  background-color: transparent;
+}
+
+.sidebar .modulos-menu.active .submenu {
+  max-height: 300px; /* Suficiente para 3 ítems, ajústalo si agregas más */
+}
+/* BOTÓN DE CERRAR SESIÓN */
+.logout {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+/* main body */
+.main--content {
+  position: relative;
+  background-color: #ebe9e9;
+  width: 100%;
+  padding: 1rem;
+}
+.header--wrapper img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.header--wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #ffff;
+  border-radius: 10px;
+  padding: 10px 2rem;
+  margin-bottom: 1rem;
+}
+.header--tittle {
+  color: #395886;
+}
+.user--info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.search--box {
+  background: rgb(237, 237, 237);
+  border-radius: 15px;
+  color: #395886;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px;
+}
+.search--box input {
+  background-color: transparent;
+  padding: 10px;
+}
+.search--box i {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+.search--box i:hover {
+  transform: scale(1, 2);
+}
+/* card container */
+.card--container {
+  background: #ffff;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.card--wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.main--tittle {
+  color: #395886;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+.info--card {
+  background: #b1c9ef;
+  border-radius: 10px;
+  padding: 1.2rem;
+  width: 290px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+}
+.info--card:hover {
+  transform: translateY(-5px);
+}
+.card--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.amount {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 12px;
+  font-weight: 200;
+  font-weight: bold;
+}
+.amount--value {
+  font-size: 24px;
+  font-family: "Courier New", "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+.icon {
+  color: #ffff;
+  padding: 1rem;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background: green;
+}
+.card-detail {
+  font-size: 18px;
+  color: rgba(119, 119, 119, 0.7);
+  letter-spacing: 2px;
+  font-family: "Courier New", Courier, monospace;
+}
+/* color */
+.light-green {
+  background: #d5deefa8;
+}
+.light-purple {
+  background: #d5deefa8;
+}
+.light-blue {
+  background: #d5deefa8;
+}
+.dark-green {
+  background: green;
+}
+.dark-purple {
+  background: purple;
+}
+.dark-blue {
+  background: blue;
+}
+
+.chart--wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+/* Barras */
+.bar--chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  width: 400px;
+  height: 250px;
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+}
+.bar {
+  width: 30px;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+  font-size: 12px;
+  padding-bottom: 5px;
+  transition: all 0.5s;
+}
+.bar--label {
+  font-size: 12px;
+  color: #395886;
+  font-weight: bold;
+}
+.bar--group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%; /* <-- Esto es importante */
+}
+/* Círculos */
+.circle--charts {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #d5deefa8;
+  color: #395886;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.circle--text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.circle--text small {
+  font-size: 10px;
+  color: #395886;
+  font-weight: normal;
+}
+.bar--description {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #395886;
+  font-weight: bold;
+}
+/*css profesion*/
+
+/* Título y botón */
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.title-container h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+}
+.btn-add {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.btn-add:hover {
+  background-color: #1f618d;
+}

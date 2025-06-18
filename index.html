@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Design</title>
+   <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" 
+    crossorigin="anonymous">
+  </head>
+  <body>
+    <!--Aquí inicia el SIDEBAR-->
+    <div class="sidebar">
+      <div class="logo"></div>
+      <ul class="menu">
+        <li class="active">
+          <a href="./index.html">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="./profile.html">
+            <i class="fas fa-user"></i>
+            <span>Mi perfil</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-chart-bar"></i>
+            <span>Ofertas de empleo</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-briefcase"></i>
+            <span> Postulaciones</span>
+          </a>
+        </li>
+        <li class="modulos-menu">
+  <a href="#" onclick="toggleSubmenu(event)">
+    <i class="fas fa-question-circle"></i>
+    <span>Modulos</span>
+  </a>
+  <ul class="submenu">
+    <li><a href="./modulo_Cargo.html">Cargo</a></li>
+    <li><a href="#plaza">Plaza</a></li>
+    <li><a href="./modulo_profesion.html" id="Profesion">Profesion</a></li>
+  </ul>
+</li>
+        <li>
+          <a href="#">
+            <i class="fas fa-cog"></i>
+            <span>Configuración</span>
+          </a>
+        </li>
+        <li class="logout">
+          <a href="#">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Cerrar Sesión</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--Aquí inicia el SIDEBAR-->
+
+    <!--Inicio del MAIN CONTENT-->
+    <div id="main--content"  class="main--content">
+      <div class="header--wrapper">
+        <div class="header--tittle">
+          <span>NEXTHIRE</span>
+          <h2>Dashboard</h2>
+        </div>
+        <div class="user--info">
+          <div class="search--box">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" placeholder="Buscar" />
+          </div>
+          <a href="./profile.html"><img src="img/user.jpg" class="rounded-circle ms-3" alt="Usuario" width="40" height="40"></a>
+        </div>
+      </div>
+      <div class="card--container">
+        <h3 class="main--tittle">Actividad</h3>
+        <div class="card--wrapper">
+            <div class="info--card light-green">
+                <div class="card--header">
+                    <div class="amount">
+                        <span class="title">
+                            Postulaciones Enviadas
+                        </span>
+                        <span class="amount--value">10</span>
+                    </div>
+                    <i class="fas fa-check icon dark-green"></i> 
+                </div>
+                <span class="card-detail">Estado</span>
+            </div>
+            <div class="info--card light-purple">
+              <div class="card--header">
+                  <div class="amount">
+                      <span class="title">
+                          Postulaciones en Revisión
+                      </span>
+                      <span class="amount--value">8</span>
+                  </div>
+                  <i class="fas fa-clock icon dark-purple"></i> 
+              </div>
+              <span class="card-detail">Estado</span>
+          </div>
+          <div class="info--card light-blue">
+            <div class="card--header">
+                <div class="amount">
+                    <span class="title">
+                        Ofertas Guardadas
+                    </span>
+                    <span class="amount--value">5</span>
+                </div>
+                <i class="fas fa-floppy-disk icon dark-blue"></i> 
+            </div>
+            <span class="card-detail">Estado</span>
+        </div>
+        </div>
+      </div>
+
+      
+      <div class="card--container">
+        <h3 class="main--tittle">Postulaciones Aprobadas en meses y mayor porcentaje de postulantes registrados por departamento</h3>
+        <div class="chart--wrapper">
+          
+          <!-- Gráfico de Barras -->
+          <div class="bar--chart">
+            <div class="bar--group">
+              <div class="bar" style="height: 80%; background-color: #395886;">30</div>
+              <span class="bar--label">Enero</span>
+            </div>
+          
+            <div class="bar--group">
+              <div class="bar" style="height: 55%; background-color: #5C7DA8;">20</div>
+              <span class="bar--label">Febrero</span>
+            </div>
+          
+            <div class="bar--group">
+              <div class="bar" style="height: 35%; background-color: #7BA1D2;">13</div>
+              <span class="bar--label">Marzo</span>
+            </div>
+          
+            <div class="bar--group">
+              <div class="bar" style="height: 20%; background-color: #A3C1E5;">7</div>
+              <span class="bar--label">Abril</span>
+            </div>
+          
+            <div class="bar--group">
+              <div class="bar" style="height: 35%; background-color: #395886;">13</div>
+              <span class="bar--label">Mayo</span>
+            </div>
+          </div>  
+          <!-- Gráficos Circulares -->
+          <div class="circle--charts">
+            <div class="circle light-green">
+              <div class="circle--text">
+                <span>55%</span>
+                <small>Managua</small>
+              </div>
+            </div>
+            <div class="circle light-purple">
+              <div class="circle--text">
+                <span>25%</span>
+                <small>Masaya</small>
+              </div>
+            </div>
+            <div class="circle light-blue">
+              <div class="circle--text">
+                <span>20%</span>
+                <small>Carazo</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Inicio del FOOTER-->
+      <footer class="bg-dark text-white text-center py-3 mt-4">
+      <div class="container">
+        <p class="mb-0">&copy; 2025 Nexthire - Todos los derechos reservados</p>
+      </div>
+    </footer>
+    <!-- END del FOOTER-->
+    </div>
+    <!-- END of MAIN CONTENT-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script-load-table.js"></script>
+    <script src="./scriptProfesion.js"></script>
+    
+  </body>
+</html>
