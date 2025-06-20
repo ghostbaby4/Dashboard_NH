@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Design</title>
+    <link rel="stylesheet" href="style_grafica.css">
    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -86,102 +87,31 @@
           <a href="./profile.html"><img src="img/user.jpg" class="rounded-circle ms-3" alt="Usuario" width="40" height="40"></a>
         </div>
       </div>
-      <div class="card--container">
-        <h3 class="main--tittle">Actividad</h3>
-        <div class="card--wrapper">
-            <div class="info--card light-green">
-                <div class="card--header">
-                    <div class="amount">
-                        <span class="title">
-                            Postulaciones Enviadas
-                        </span>
-                        <span class="amount--value">10</span>
-                    </div>
-                    <i class="fas fa-check icon dark-green"></i> 
-                </div>
-                <span class="card-detail">Estado</span>
-            </div>
-            <div class="info--card light-purple">
-              <div class="card--header">
-                  <div class="amount">
-                      <span class="title">
-                          Postulaciones en Revisión
-                      </span>
-                      <span class="amount--value">8</span>
-                  </div>
-                  <i class="fas fa-clock icon dark-purple"></i> 
-              </div>
-              <span class="card-detail">Estado</span>
-          </div>
-          <div class="info--card light-blue">
-            <div class="card--header">
-                <div class="amount">
-                    <span class="title">
-                        Ofertas Guardadas
-                    </span>
-                    <span class="amount--value">5</span>
-                </div>
-                <i class="fas fa-floppy-disk icon dark-blue"></i> 
-            </div>
-            <span class="card-detail">Estado</span>
-        </div>
-        </div>
+<h1>📊 Reporte de Postulantes</h1>
+      <p class="descripcion">
+        Este reporte muestra la cantidad total de postulantes agrupados por su
+        profesión y sexo, con visualizaciones interactivas.
+      </p>
+
+      <div class="chart-box">
+        <h2>🧑‍⚕️ Postulantes por Profesión</h2>
+        <p>Número total de postulantes registrados por su área profesional.</p>
+        <div id="bar-chart"></div>
       </div>
 
-      
-      <div class="card--container">
-        <h3 class="main--tittle">Postulaciones Aprobadas en meses y mayor porcentaje de postulantes registrados por departamento</h3>
-        <div class="chart--wrapper">
-          
-          <!-- Gráfico de Barras -->
-          <div class="bar--chart">
-            <div class="bar--group">
-              <div class="bar" style="height: 80%; background-color: #395886;">30</div>
-              <span class="bar--label">Enero</span>
-            </div>
-          
-            <div class="bar--group">
-              <div class="bar" style="height: 55%; background-color: #5C7DA8;">20</div>
-              <span class="bar--label">Febrero</span>
-            </div>
-          
-            <div class="bar--group">
-              <div class="bar" style="height: 35%; background-color: #7BA1D2;">13</div>
-              <span class="bar--label">Marzo</span>
-            </div>
-          
-            <div class="bar--group">
-              <div class="bar" style="height: 20%; background-color: #A3C1E5;">7</div>
-              <span class="bar--label">Abril</span>
-            </div>
-          
-            <div class="bar--group">
-              <div class="bar" style="height: 35%; background-color: #395886;">13</div>
-              <span class="bar--label">Mayo</span>
-            </div>
-          </div>  
-          <!-- Gráficos Circulares -->
-          <div class="circle--charts">
-            <div class="circle light-green">
-              <div class="circle--text">
-                <span>55%</span>
-                <small>Managua</small>
-              </div>
-            </div>
-            <div class="circle light-purple">
-              <div class="circle--text">
-                <span>25%</span>
-                <small>Masaya</small>
-              </div>
-            </div>
-            <div class="circle light-blue">
-              <div class="circle--text">
-                <span>20%</span>
-                <small>Carazo</small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="chart-box">
+        <h2>📊 Distribución Porcentual por Profesión</h2>
+        <p>
+          Porcentaje que representa cada profesión sobre el total de
+          postulantes.
+        </p>
+        <div id="pie-profesion"></div>
+      </div>
+
+      <div class="chart-box">
+        <h2>👩‍⚕️👨‍🔧 Distribución por Sexo</h2>
+        <p>Porcentaje de postulantes por sexo.</p>
+        <div id="pie-sexo"></div>
       </div>
       <!-- Inicio del FOOTER-->
       <footer class="bg-dark text-white text-center py-3 mt-4">
@@ -193,23 +123,24 @@
     </div>
     <!-- END of MAIN CONTENT-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="script_grafica.js"></script>
     <script>
-      function toggleSubmenu(event) 
-      {
+      function toggleSubmenu(event) {
         event.preventDefault();
-        const modulosItem = event.currentTarget.closest('.modulos-menu');
-        modulosItem.classList.toggle('active');
+        const modulosItem = event.currentTarget.closest(".modulos-menu");
+        modulosItem.classList.toggle("active");
       }
 
-    // Cierra otros submenús si se hace clic fuera
-    document.addEventListener('click', function (e) 
-    {
-      const clickedInside = e.target.closest('.modulos-menu');
-      document.querySelectorAll('.modulos-menu').forEach(item => {
-    if (item !== clickedInside) {item.classList.remove('active');}});
-    });
+      // Cierra otros submenús si se hace clic fuera
+      document.addEventListener("click", function (e) {
+        const clickedInside = e.target.closest(".modulos-menu");
+        document.querySelectorAll(".modulos-menu").forEach((item) => {
+          if (item !== clickedInside) {
+            item.classList.remove("active");
+          }
+        });
+      });
     </script>
-    <script src="./scriptCargo.js"></script>
-    
   </body>
 </html>
