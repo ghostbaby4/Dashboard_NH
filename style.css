@@ -30,6 +30,7 @@ body {
 
 .sidebar:hover {
   width: 270px;
+  overflow: visible;
 }
 
 /* LOGO */
